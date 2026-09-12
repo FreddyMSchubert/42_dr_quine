@@ -1,0 +1,8 @@
+.DS_Store
+.vscode/
+
+C/Colleen
+C/Grace
+C/*.dSYM/
+C/*.txt
+C/a.out
