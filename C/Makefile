@@ -39,22 +39,22 @@ run-Colleen: Colleen
 
 run-Grace: Grace
 	@printf '  RUN Grace\n'
-	@./Grace > Grace.txt
+	@./Grace
 
 diff-Colleen: run-Colleen
 	@printf '  DIFF Colleen.c Colleen.txt\n'
 	@if diff -u Colleen.c Colleen.txt; then printf '  $(GREEN)OUTPUT SAME: Colleen$(RESET)\n'; else printf '  $(RED)OUTPUT DIFFERENT: Colleen$(RESET)\n'; fi
 
 diff-Grace: run-Grace
-	@printf '  DIFF Grace.c Grace.txt\n'
-	@if diff -u Grace.c Grace.txt; then printf '  $(GREEN)OUTPUT SAME: Grace$(RESET)\n'; else printf '  $(RED)OUTPUT DIFFERENT: Grace$(RESET)\n'; fi
+	@printf '  DIFF Grace.c Grace_kid.s\n'
+	@if diff -u Grace.c Grace_kid.s; then printf '  $(GREEN)OUTPUT SAME: Grace$(RESET)\n'; else printf '  $(RED)OUTPUT DIFFERENT: Grace$(RESET)\n'; fi
 
 colleen coline: diff-Colleen
 
 grace: diff-Grace
 
 clean:
-	@rm -f Colleen.txt Grace.txt
+	@rm -f Colleen.txt Grace_kid.s
 
 fclean: clean
 	@rm -f $(PROGRAMS)
