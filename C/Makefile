@@ -57,6 +57,7 @@ diff-Grace: run-Grace
 diff-Sully: run-Sully
 	@printf '  DIFF Sully.c Sully_5.c\n'
 	@if diff -u Sully.c Sully_5.c; then printf '  $(GREEN)OUTPUT SAME: Sully -> Sully_5$(RESET)\n'; else printf '  $(RED)OUTPUT DIFFERENT: Sully -> Sully_5$(RESET)\n'; exit 1; fi
+	@printf '  Please check diffs between numbered Sully files manually\n'
 
 colleen: diff-Colleen
 
